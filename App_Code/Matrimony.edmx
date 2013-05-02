@@ -1,0 +1,1474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MatrimonyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MatrimonyModelStoreContainer">
+          <EntitySet Name="AstrologicalInfo" EntityType="MatrimonyModel.Store.AstrologicalInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Caste" EntityType="MatrimonyModel.Store.Caste" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="City" EntityType="MatrimonyModel.Store.City" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Country" EntityType="MatrimonyModel.Store.Country" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Currency" EntityType="MatrimonyModel.Store.Currency" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EduDetails" EntityType="MatrimonyModel.Store.EduDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Family" EntityType="MatrimonyModel.Store.Family" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Gothra" EntityType="MatrimonyModel.Store.Gothra" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Habit" EntityType="MatrimonyModel.Store.Habit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HighEducation" EntityType="MatrimonyModel.Store.HighEducation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MatrimonyDetails" EntityType="MatrimonyModel.Store.MatrimonyDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MotherTongue" EntityType="MatrimonyModel.Store.MotherTongue" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Occupation" EntityType="MatrimonyModel.Store.Occupation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PhysicalAttr" EntityType="MatrimonyModel.Store.PhysicalAttr" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Raasi" EntityType="MatrimonyModel.Store.Raasi" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Religion" EntityType="MatrimonyModel.Store.Religion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StarDetails" EntityType="MatrimonyModel.Store.StarDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StateDetails" EntityType="MatrimonyModel.Store.StateDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SubCaste" EntityType="MatrimonyModel.Store.SubCaste" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="fk_AstrologicalInfo_MatriID" Association="MatrimonyModel.Store.fk_AstrologicalInfo_MatriID">
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+            <End Role="AstrologicalInfo" EntitySet="AstrologicalInfo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_AstrologicalInfo_RaasiID" Association="MatrimonyModel.Store.fk_AstrologicalInfo_RaasiID">
+            <End Role="Raasi" EntitySet="Raasi" />
+            <End Role="AstrologicalInfo" EntitySet="AstrologicalInfo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_AstrologicalInfo_StarID" Association="MatrimonyModel.Store.fk_AstrologicalInfo_StarID">
+            <End Role="StarDetails" EntitySet="StarDetails" />
+            <End Role="AstrologicalInfo" EntitySet="AstrologicalInfo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Caste_ReligionID" Association="MatrimonyModel.Store.fk_Caste_ReligionID">
+            <End Role="Religion" EntitySet="Religion" />
+            <End Role="Caste" EntitySet="Caste" />
+          </AssociationSet>
+          <AssociationSet Name="fk_City_StateID" Association="MatrimonyModel.Store.fk_City_StateID">
+            <End Role="StateDetails" EntitySet="StateDetails" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="fk_EduDetails_CurrID" Association="MatrimonyModel.Store.fk_EduDetails_CurrID">
+            <End Role="Currency" EntitySet="Currency" />
+            <End Role="EduDetails" EntitySet="EduDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_EduDetails_EduID" Association="MatrimonyModel.Store.fk_EduDetails_EduID">
+            <End Role="HighEducation" EntitySet="HighEducation" />
+            <End Role="EduDetails" EntitySet="EduDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_EduDetails_MatriID" Association="MatrimonyModel.Store.fk_EduDetails_MatriID">
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+            <End Role="EduDetails" EntitySet="EduDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Family_MatriID" Association="MatrimonyModel.Store.fk_Family_MatriID">
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+            <End Role="Family" EntitySet="Family" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Gothra_GothraID" Association="MatrimonyModel.Store.fk_Gothra_GothraID">
+            <End Role="SubCaste" EntitySet="SubCaste" />
+            <End Role="Gothra" EntitySet="Gothra" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Habit_MatriID" Association="MatrimonyModel.Store.fk_Habit_MatriID">
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+            <End Role="Habit" EntitySet="Habit" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_CasteID" Association="MatrimonyModel.Store.fk_MatrimonyDetails_CasteID">
+            <End Role="Caste" EntitySet="Caste" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_CityID" Association="MatrimonyModel.Store.fk_MatrimonyDetails_CityID">
+            <End Role="City" EntitySet="City" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_GothraID" Association="MatrimonyModel.Store.fk_MatrimonyDetails_GothraID">
+            <End Role="Gothra" EntitySet="Gothra" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_MatriID" Association="MatrimonyModel.Store.fk_MatrimonyDetails_MatriID">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_ReligionID" Association="MatrimonyModel.Store.fk_MatrimonyDetails_ReligionID">
+            <End Role="Religion" EntitySet="Religion" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_StateID" Association="MatrimonyModel.Store.fk_MatrimonyDetails_StateID">
+            <End Role="StateDetails" EntitySet="StateDetails" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_SubCasteID" Association="MatrimonyModel.Store.fk_MatrimonyDetails_SubCasteID">
+            <End Role="SubCaste" EntitySet="SubCaste" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_TongueID" Association="MatrimonyModel.Store.fk_MatrimonyDetails_TongueID">
+            <End Role="MotherTongue" EntitySet="MotherTongue" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_PhysicalAttr_MatriID" Association="MatrimonyModel.Store.fk_PhysicalAttr_MatriID">
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+            <End Role="PhysicalAttr" EntitySet="PhysicalAttr" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Raasi_StarID" Association="MatrimonyModel.Store.fk_Raasi_StarID">
+            <End Role="StarDetails" EntitySet="StarDetails" />
+            <End Role="Raasi" EntitySet="Raasi" />
+          </AssociationSet>
+          <AssociationSet Name="fk_StateDetails_CountryID" Association="MatrimonyModel.Store.fk_StateDetails_CountryID">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="StateDetails" EntitySet="StateDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_SubCaste_CasteID" Association="MatrimonyModel.Store.fk_SubCaste_CasteID">
+            <End Role="Caste" EntitySet="Caste" />
+            <End Role="SubCaste" EntitySet="SubCaste" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AstrologicalInfo">
+          <Key>
+            <PropertyRef Name="MatrimonyID" />
+          </Key>
+          <Property Name="MatrimonyID" Type="int" Nullable="false" />
+          <Property Name="Dosham" Type="varchar" MaxLength="80" />
+          <Property Name="StarID" Type="int" />
+          <Property Name="RaasiID" Type="int" />
+        </EntityType>
+        <EntityType Name="Caste">
+          <Key>
+            <PropertyRef Name="CasteID" />
+          </Key>
+          <Property Name="CasteID" Type="int" Nullable="false" />
+          <Property Name="CasteName" Type="varchar" MaxLength="80" />
+          <Property Name="ReligionID" Type="int" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="int" Nullable="false" />
+          <Property Name="CityName" Type="varchar" MaxLength="80" />
+          <Property Name="StateID" Type="int" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="CountryID" Type="int" Nullable="false" />
+          <Property Name="CountryName" Type="varchar" MaxLength="80" />
+          <Property Name="CountryCode" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="CurrID" />
+          </Key>
+          <Property Name="CurrID" Type="int" Nullable="false" />
+          <Property Name="CurrName" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="EduDetails">
+          <Key>
+            <PropertyRef Name="MatrimonyID" />
+          </Key>
+          <Property Name="MatrimonyID" Type="int" Nullable="false" />
+          <Property Name="EducationID" Type="int" />
+          <Property Name="OccupID" Type="int" />
+          <Property Name="EmployedIn" Type="varchar" MaxLength="80" />
+          <Property Name="IncomeType" Type="varchar" MaxLength="80" />
+          <Property Name="CurrID" Type="int" />
+          <Property Name="Income" Type="int" />
+        </EntityType>
+        <EntityType Name="Family">
+          <Key>
+            <PropertyRef Name="MatrimonyID" />
+          </Key>
+          <Property Name="MatrimonyID" Type="int" Nullable="false" />
+          <Property Name="FamilyStatus" Type="varchar" MaxLength="80" />
+          <Property Name="FamilyType" Type="varchar" MaxLength="80" />
+          <Property Name="FamilyValues" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="Gothra">
+          <Key>
+            <PropertyRef Name="GothraID" />
+          </Key>
+          <Property Name="GothraID" Type="int" Nullable="false" />
+          <Property Name="GothraName" Type="varchar" MaxLength="80" />
+          <Property Name="SubCasteID" Type="int" />
+        </EntityType>
+        <EntityType Name="Habit">
+          <Key>
+            <PropertyRef Name="MatrimonyID" />
+          </Key>
+          <Property Name="MatrimonyID" Type="int" Nullable="false" />
+          <Property Name="Food" Type="nvarchar" MaxLength="80" />
+          <Property Name="Smoking" Type="nvarchar" MaxLength="80" />
+          <Property Name="Drinking" Type="nvarchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="HighEducation">
+          <Key>
+            <PropertyRef Name="EducationID" />
+          </Key>
+          <Property Name="EducationID" Type="int" Nullable="false" />
+          <Property Name="EducationName" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="MatrimonyDetails">
+          <Key>
+            <PropertyRef Name="MatrimonyID" />
+          </Key>
+          <Property Name="MatrimonyID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="80" />
+          <Property Name="DOB" Type="date" />
+          <Property Name="Gender" Type="char" MaxLength="1" />
+          <Property Name="MobileNo" Type="int" />
+          <Property Name="CountryID" Type="int" />
+          <Property Name="StateID" Type="int" />
+          <Property Name="CityID" Type="int" />
+          <Property Name="ReligionID" Type="int" />
+          <Property Name="CasteID" Type="int" />
+          <Property Name="SubCasteID" Type="int" />
+          <Property Name="GothraID" Type="int" />
+          <Property Name="TongueID" Type="int" />
+          <Property Name="Email" Type="varchar" MaxLength="256" />
+          <Property Name="MaritalStatus" Type="varchar" MaxLength="20" />
+          <Property Name="NoOfChild" Type="int" />
+          <Property Name="LivingWith" Type="char" MaxLength="1" />
+          <Property Name="DescriptionInfo" Type="varchar" MaxLength="2000" />
+          <Property Name="ActiveInd" Type="char" MaxLength="1" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="UpdatedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="MotherTongue">
+          <Key>
+            <PropertyRef Name="TongueID" />
+          </Key>
+          <Property Name="TongueID" Type="int" Nullable="false" />
+          <Property Name="TongueName" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="Occupation">
+          <Key>
+            <PropertyRef Name="OccupID" />
+          </Key>
+          <Property Name="OccupID" Type="int" Nullable="false" />
+          <Property Name="OccupName" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="PhysicalAttr">
+          <Key>
+            <PropertyRef Name="MatrimonyID" />
+          </Key>
+          <Property Name="MatrimonyID" Type="int" Nullable="false" />
+          <Property Name="HeightAttr" Type="int" />
+          <Property Name="WeightAttr" Type="int" />
+          <Property Name="BodyType" Type="varchar" MaxLength="80" />
+          <Property Name="Complexion" Type="varchar" MaxLength="80" />
+          <Property Name="PhysicalStatus" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="Raasi">
+          <Key>
+            <PropertyRef Name="RaasiID" />
+          </Key>
+          <Property Name="RaasiID" Type="int" Nullable="false" />
+          <Property Name="RaasiName" Type="varchar" MaxLength="80" />
+          <Property Name="StarID" Type="int" />
+        </EntityType>
+        <EntityType Name="Religion">
+          <Key>
+            <PropertyRef Name="ReligionID" />
+          </Key>
+          <Property Name="ReligionID" Type="int" Nullable="false" />
+          <Property Name="ReligionName" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="StarDetails">
+          <Key>
+            <PropertyRef Name="StarID" />
+          </Key>
+          <Property Name="StarID" Type="int" Nullable="false" />
+          <Property Name="StarName" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="StateDetails">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Name="StateID" Type="int" Nullable="false" />
+          <Property Name="StateName" Type="varchar" MaxLength="80" />
+          <Property Name="CountryID" Type="int" />
+        </EntityType>
+        <EntityType Name="SubCaste">
+          <Key>
+            <PropertyRef Name="SubCasteID" />
+          </Key>
+          <Property Name="SubCasteID" Type="int" Nullable="false" />
+          <Property Name="SubCasteName" Type="varchar" MaxLength="80" />
+          <Property Name="CasteID" Type="int" />
+        </EntityType>
+        <Association Name="fk_AstrologicalInfo_MatriID">
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.Store.MatrimonyDetails" Multiplicity="1" />
+          <End Role="AstrologicalInfo" Type="MatrimonyModel.Store.AstrologicalInfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MatrimonyDetails">
+              <PropertyRef Name="MatrimonyID" />
+            </Principal>
+            <Dependent Role="AstrologicalInfo">
+              <PropertyRef Name="MatrimonyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_AstrologicalInfo_RaasiID">
+          <End Role="Raasi" Type="MatrimonyModel.Store.Raasi" Multiplicity="0..1" />
+          <End Role="AstrologicalInfo" Type="MatrimonyModel.Store.AstrologicalInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Raasi">
+              <PropertyRef Name="RaasiID" />
+            </Principal>
+            <Dependent Role="AstrologicalInfo">
+              <PropertyRef Name="RaasiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_AstrologicalInfo_StarID">
+          <End Role="StarDetails" Type="MatrimonyModel.Store.StarDetails" Multiplicity="0..1" />
+          <End Role="AstrologicalInfo" Type="MatrimonyModel.Store.AstrologicalInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StarDetails">
+              <PropertyRef Name="StarID" />
+            </Principal>
+            <Dependent Role="AstrologicalInfo">
+              <PropertyRef Name="StarID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Caste_ReligionID">
+          <End Role="Religion" Type="MatrimonyModel.Store.Religion" Multiplicity="0..1" />
+          <End Role="Caste" Type="MatrimonyModel.Store.Caste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Religion">
+              <PropertyRef Name="ReligionID" />
+            </Principal>
+            <Dependent Role="Caste">
+              <PropertyRef Name="ReligionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_City_StateID">
+          <End Role="StateDetails" Type="MatrimonyModel.Store.StateDetails" Multiplicity="0..1" />
+          <End Role="City" Type="MatrimonyModel.Store.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateDetails">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_EduDetails_CurrID">
+          <End Role="Currency" Type="MatrimonyModel.Store.Currency" Multiplicity="0..1" />
+          <End Role="EduDetails" Type="MatrimonyModel.Store.EduDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="CurrID" />
+            </Principal>
+            <Dependent Role="EduDetails">
+              <PropertyRef Name="CurrID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_EduDetails_EduID">
+          <End Role="HighEducation" Type="MatrimonyModel.Store.HighEducation" Multiplicity="0..1" />
+          <End Role="EduDetails" Type="MatrimonyModel.Store.EduDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HighEducation">
+              <PropertyRef Name="EducationID" />
+            </Principal>
+            <Dependent Role="EduDetails">
+              <PropertyRef Name="EducationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_EduDetails_MatriID">
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.Store.MatrimonyDetails" Multiplicity="1" />
+          <End Role="EduDetails" Type="MatrimonyModel.Store.EduDetails" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MatrimonyDetails">
+              <PropertyRef Name="MatrimonyID" />
+            </Principal>
+            <Dependent Role="EduDetails">
+              <PropertyRef Name="MatrimonyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Family_MatriID">
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.Store.MatrimonyDetails" Multiplicity="1" />
+          <End Role="Family" Type="MatrimonyModel.Store.Family" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MatrimonyDetails">
+              <PropertyRef Name="MatrimonyID" />
+            </Principal>
+            <Dependent Role="Family">
+              <PropertyRef Name="MatrimonyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Gothra_GothraID">
+          <End Role="SubCaste" Type="MatrimonyModel.Store.SubCaste" Multiplicity="0..1" />
+          <End Role="Gothra" Type="MatrimonyModel.Store.Gothra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubCaste">
+              <PropertyRef Name="SubCasteID" />
+            </Principal>
+            <Dependent Role="Gothra">
+              <PropertyRef Name="SubCasteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Habit_MatriID">
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.Store.MatrimonyDetails" Multiplicity="1" />
+          <End Role="Habit" Type="MatrimonyModel.Store.Habit" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MatrimonyDetails">
+              <PropertyRef Name="MatrimonyID" />
+            </Principal>
+            <Dependent Role="Habit">
+              <PropertyRef Name="MatrimonyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_CasteID">
+          <End Role="Caste" Type="MatrimonyModel.Store.Caste" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.Store.MatrimonyDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Caste">
+              <PropertyRef Name="CasteID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="CasteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_CityID">
+          <End Role="City" Type="MatrimonyModel.Store.City" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.Store.MatrimonyDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_GothraID">
+          <End Role="Gothra" Type="MatrimonyModel.Store.Gothra" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.Store.MatrimonyDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gothra">
+              <PropertyRef Name="GothraID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="GothraID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_MatriID">
+          <End Role="Country" Type="MatrimonyModel.Store.Country" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.Store.MatrimonyDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_ReligionID">
+          <End Role="Religion" Type="MatrimonyModel.Store.Religion" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.Store.MatrimonyDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Religion">
+              <PropertyRef Name="ReligionID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="ReligionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_StateID">
+          <End Role="StateDetails" Type="MatrimonyModel.Store.StateDetails" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.Store.MatrimonyDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateDetails">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_SubCasteID">
+          <End Role="SubCaste" Type="MatrimonyModel.Store.SubCaste" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.Store.MatrimonyDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubCaste">
+              <PropertyRef Name="SubCasteID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="SubCasteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_TongueID">
+          <End Role="MotherTongue" Type="MatrimonyModel.Store.MotherTongue" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.Store.MatrimonyDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MotherTongue">
+              <PropertyRef Name="TongueID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="TongueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_PhysicalAttr_MatriID">
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.Store.MatrimonyDetails" Multiplicity="1" />
+          <End Role="PhysicalAttr" Type="MatrimonyModel.Store.PhysicalAttr" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MatrimonyDetails">
+              <PropertyRef Name="MatrimonyID" />
+            </Principal>
+            <Dependent Role="PhysicalAttr">
+              <PropertyRef Name="MatrimonyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Raasi_StarID">
+          <End Role="StarDetails" Type="MatrimonyModel.Store.StarDetails" Multiplicity="0..1" />
+          <End Role="Raasi" Type="MatrimonyModel.Store.Raasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StarDetails">
+              <PropertyRef Name="StarID" />
+            </Principal>
+            <Dependent Role="Raasi">
+              <PropertyRef Name="StarID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_StateDetails_CountryID">
+          <End Role="Country" Type="MatrimonyModel.Store.Country" Multiplicity="0..1" />
+          <End Role="StateDetails" Type="MatrimonyModel.Store.StateDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryID" />
+            </Principal>
+            <Dependent Role="StateDetails">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_SubCaste_CasteID">
+          <End Role="Caste" Type="MatrimonyModel.Store.Caste" Multiplicity="0..1" />
+          <End Role="SubCaste" Type="MatrimonyModel.Store.SubCaste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Caste">
+              <PropertyRef Name="CasteID" />
+            </Principal>
+            <Dependent Role="SubCaste">
+              <PropertyRef Name="CasteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MatrimonyModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MatrimonyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AstrologicalInfoes" EntityType="MatrimonyModel.AstrologicalInfo" />
+          <EntitySet Name="Castes" EntityType="MatrimonyModel.Caste" />
+          <EntitySet Name="Cities" EntityType="MatrimonyModel.City" />
+          <EntitySet Name="Countries" EntityType="MatrimonyModel.Country" />
+          <EntitySet Name="Currencies" EntityType="MatrimonyModel.Currency" />
+          <EntitySet Name="EduDetails" EntityType="MatrimonyModel.EduDetail" />
+          <EntitySet Name="Families" EntityType="MatrimonyModel.Family" />
+          <EntitySet Name="Gothras" EntityType="MatrimonyModel.Gothra" />
+          <EntitySet Name="Habits" EntityType="MatrimonyModel.Habit" />
+          <EntitySet Name="HighEducations" EntityType="MatrimonyModel.HighEducation" />
+          <EntitySet Name="MatrimonyDetails" EntityType="MatrimonyModel.MatrimonyDetail" />
+          <EntitySet Name="MotherTongues" EntityType="MatrimonyModel.MotherTongue" />
+          <EntitySet Name="Occupations" EntityType="MatrimonyModel.Occupation" />
+          <EntitySet Name="PhysicalAttrs" EntityType="MatrimonyModel.PhysicalAttr" />
+          <EntitySet Name="Raasis" EntityType="MatrimonyModel.Raasi" />
+          <EntitySet Name="Religions" EntityType="MatrimonyModel.Religion" />
+          <EntitySet Name="StarDetails" EntityType="MatrimonyModel.StarDetail" />
+          <EntitySet Name="StateDetails" EntityType="MatrimonyModel.StateDetail" />
+          <EntitySet Name="SubCastes" EntityType="MatrimonyModel.SubCaste" />
+          <AssociationSet Name="fk_AstrologicalInfo_MatriID" Association="MatrimonyModel.fk_AstrologicalInfo_MatriID">
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+            <End Role="AstrologicalInfo" EntitySet="AstrologicalInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_AstrologicalInfo_RaasiID" Association="MatrimonyModel.fk_AstrologicalInfo_RaasiID">
+            <End Role="Raasi" EntitySet="Raasis" />
+            <End Role="AstrologicalInfo" EntitySet="AstrologicalInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_AstrologicalInfo_StarID" Association="MatrimonyModel.fk_AstrologicalInfo_StarID">
+            <End Role="StarDetails" EntitySet="StarDetails" />
+            <End Role="AstrologicalInfo" EntitySet="AstrologicalInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Caste_ReligionID" Association="MatrimonyModel.fk_Caste_ReligionID">
+            <End Role="Religion" EntitySet="Religions" />
+            <End Role="Caste" EntitySet="Castes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_CasteID" Association="MatrimonyModel.fk_MatrimonyDetails_CasteID">
+            <End Role="Caste" EntitySet="Castes" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_SubCaste_CasteID" Association="MatrimonyModel.fk_SubCaste_CasteID">
+            <End Role="Caste" EntitySet="Castes" />
+            <End Role="SubCaste" EntitySet="SubCastes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_City_StateID" Association="MatrimonyModel.fk_City_StateID">
+            <End Role="StateDetails" EntitySet="StateDetails" />
+            <End Role="City" EntitySet="Cities" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_CityID" Association="MatrimonyModel.fk_MatrimonyDetails_CityID">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_MatriID" Association="MatrimonyModel.fk_MatrimonyDetails_MatriID">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_StateDetails_CountryID" Association="MatrimonyModel.fk_StateDetails_CountryID">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="StateDetails" EntitySet="StateDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_EduDetails_CurrID" Association="MatrimonyModel.fk_EduDetails_CurrID">
+            <End Role="Currency" EntitySet="Currencies" />
+            <End Role="EduDetails" EntitySet="EduDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_EduDetails_EduID" Association="MatrimonyModel.fk_EduDetails_EduID">
+            <End Role="HighEducation" EntitySet="HighEducations" />
+            <End Role="EduDetails" EntitySet="EduDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_EduDetails_MatriID" Association="MatrimonyModel.fk_EduDetails_MatriID">
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+            <End Role="EduDetails" EntitySet="EduDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Family_MatriID" Association="MatrimonyModel.fk_Family_MatriID">
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+            <End Role="Family" EntitySet="Families" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Gothra_GothraID" Association="MatrimonyModel.fk_Gothra_GothraID">
+            <End Role="SubCaste" EntitySet="SubCastes" />
+            <End Role="Gothra" EntitySet="Gothras" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_GothraID" Association="MatrimonyModel.fk_MatrimonyDetails_GothraID">
+            <End Role="Gothra" EntitySet="Gothras" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Habit_MatriID" Association="MatrimonyModel.fk_Habit_MatriID">
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+            <End Role="Habit" EntitySet="Habits" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_ReligionID" Association="MatrimonyModel.fk_MatrimonyDetails_ReligionID">
+            <End Role="Religion" EntitySet="Religions" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_StateID" Association="MatrimonyModel.fk_MatrimonyDetails_StateID">
+            <End Role="StateDetails" EntitySet="StateDetails" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_SubCasteID" Association="MatrimonyModel.fk_MatrimonyDetails_SubCasteID">
+            <End Role="SubCaste" EntitySet="SubCastes" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MatrimonyDetails_TongueID" Association="MatrimonyModel.fk_MatrimonyDetails_TongueID">
+            <End Role="MotherTongue" EntitySet="MotherTongues" />
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_PhysicalAttr_MatriID" Association="MatrimonyModel.fk_PhysicalAttr_MatriID">
+            <End Role="MatrimonyDetails" EntitySet="MatrimonyDetails" />
+            <End Role="PhysicalAttr" EntitySet="PhysicalAttrs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Raasi_StarID" Association="MatrimonyModel.fk_Raasi_StarID">
+            <End Role="StarDetails" EntitySet="StarDetails" />
+            <End Role="Raasi" EntitySet="Raasis" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AstrologicalInfo">
+          <Key>
+            <PropertyRef Name="MatrimonyID" />
+          </Key>
+          <Property Name="MatrimonyID" Type="Int32" Nullable="false" />
+          <Property Name="Dosham" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="StarID" Type="Int32" />
+          <Property Name="RaasiID" Type="Int32" />
+          <NavigationProperty Name="MatrimonyDetail" Relationship="MatrimonyModel.fk_AstrologicalInfo_MatriID" FromRole="AstrologicalInfo" ToRole="MatrimonyDetails" />
+          <NavigationProperty Name="Raasi" Relationship="MatrimonyModel.fk_AstrologicalInfo_RaasiID" FromRole="AstrologicalInfo" ToRole="Raasi" />
+          <NavigationProperty Name="StarDetail" Relationship="MatrimonyModel.fk_AstrologicalInfo_StarID" FromRole="AstrologicalInfo" ToRole="StarDetails" />
+        </EntityType>
+        <EntityType Name="Caste">
+          <Key>
+            <PropertyRef Name="CasteID" />
+          </Key>
+          <Property Name="CasteID" Type="Int32" Nullable="false" />
+          <Property Name="CasteName" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="ReligionID" Type="Int32" />
+          <NavigationProperty Name="Religion" Relationship="MatrimonyModel.fk_Caste_ReligionID" FromRole="Caste" ToRole="Religion" />
+          <NavigationProperty Name="MatrimonyDetails" Relationship="MatrimonyModel.fk_MatrimonyDetails_CasteID" FromRole="Caste" ToRole="MatrimonyDetails" />
+          <NavigationProperty Name="SubCastes" Relationship="MatrimonyModel.fk_SubCaste_CasteID" FromRole="Caste" ToRole="SubCaste" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="Int32" Nullable="false" />
+          <Property Name="CityName" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="StateID" Type="Int32" />
+          <NavigationProperty Name="StateDetail" Relationship="MatrimonyModel.fk_City_StateID" FromRole="City" ToRole="StateDetails" />
+          <NavigationProperty Name="MatrimonyDetails" Relationship="MatrimonyModel.fk_MatrimonyDetails_CityID" FromRole="City" ToRole="MatrimonyDetails" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="CountryID" Type="Int32" Nullable="false" />
+          <Property Name="CountryName" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="CountryCode" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="MatrimonyDetails" Relationship="MatrimonyModel.fk_MatrimonyDetails_MatriID" FromRole="Country" ToRole="MatrimonyDetails" />
+          <NavigationProperty Name="StateDetails" Relationship="MatrimonyModel.fk_StateDetails_CountryID" FromRole="Country" ToRole="StateDetails" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="CurrID" />
+          </Key>
+          <Property Name="CurrID" Type="Int32" Nullable="false" />
+          <Property Name="CurrName" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="EduDetails" Relationship="MatrimonyModel.fk_EduDetails_CurrID" FromRole="Currency" ToRole="EduDetails" />
+        </EntityType>
+        <EntityType Name="EduDetail">
+          <Key>
+            <PropertyRef Name="MatrimonyID" />
+          </Key>
+          <Property Name="MatrimonyID" Type="Int32" Nullable="false" />
+          <Property Name="EducationID" Type="Int32" />
+          <Property Name="OccupID" Type="Int32" />
+          <Property Name="EmployedIn" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="IncomeType" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="CurrID" Type="Int32" />
+          <Property Name="Income" Type="Int32" />
+          <NavigationProperty Name="Currency" Relationship="MatrimonyModel.fk_EduDetails_CurrID" FromRole="EduDetails" ToRole="Currency" />
+          <NavigationProperty Name="HighEducation" Relationship="MatrimonyModel.fk_EduDetails_EduID" FromRole="EduDetails" ToRole="HighEducation" />
+          <NavigationProperty Name="MatrimonyDetail" Relationship="MatrimonyModel.fk_EduDetails_MatriID" FromRole="EduDetails" ToRole="MatrimonyDetails" />
+        </EntityType>
+        <EntityType Name="Family">
+          <Key>
+            <PropertyRef Name="MatrimonyID" />
+          </Key>
+          <Property Name="MatrimonyID" Type="Int32" Nullable="false" />
+          <Property Name="FamilyStatus" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="FamilyType" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="FamilyValues" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="MatrimonyDetail" Relationship="MatrimonyModel.fk_Family_MatriID" FromRole="Family" ToRole="MatrimonyDetails" />
+        </EntityType>
+        <EntityType Name="Gothra">
+          <Key>
+            <PropertyRef Name="GothraID" />
+          </Key>
+          <Property Name="GothraID" Type="Int32" Nullable="false" />
+          <Property Name="GothraName" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="SubCasteID" Type="Int32" />
+          <NavigationProperty Name="SubCaste" Relationship="MatrimonyModel.fk_Gothra_GothraID" FromRole="Gothra" ToRole="SubCaste" />
+          <NavigationProperty Name="MatrimonyDetails" Relationship="MatrimonyModel.fk_MatrimonyDetails_GothraID" FromRole="Gothra" ToRole="MatrimonyDetails" />
+        </EntityType>
+        <EntityType Name="Habit">
+          <Key>
+            <PropertyRef Name="MatrimonyID" />
+          </Key>
+          <Property Name="MatrimonyID" Type="Int32" Nullable="false" />
+          <Property Name="Food" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+          <Property Name="Smoking" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+          <Property Name="Drinking" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="MatrimonyDetail" Relationship="MatrimonyModel.fk_Habit_MatriID" FromRole="Habit" ToRole="MatrimonyDetails" />
+        </EntityType>
+        <EntityType Name="HighEducation">
+          <Key>
+            <PropertyRef Name="EducationID" />
+          </Key>
+          <Property Name="EducationID" Type="Int32" Nullable="false" />
+          <Property Name="EducationName" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="EduDetails" Relationship="MatrimonyModel.fk_EduDetails_EduID" FromRole="HighEducation" ToRole="EduDetails" />
+        </EntityType>
+        <EntityType Name="MatrimonyDetail">
+          <Key>
+            <PropertyRef Name="MatrimonyID" />
+          </Key>
+          <Property Name="MatrimonyID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="DOB" Type="DateTime" />
+          <Property Name="Gender" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="MobileNo" Type="Int32" />
+          <Property Name="CountryID" Type="Int32" />
+          <Property Name="StateID" Type="Int32" />
+          <Property Name="CityID" Type="Int32" />
+          <Property Name="ReligionID" Type="Int32" />
+          <Property Name="CasteID" Type="Int32" />
+          <Property Name="SubCasteID" Type="Int32" />
+          <Property Name="GothraID" Type="Int32" />
+          <Property Name="TongueID" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="MaritalStatus" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="NoOfChild" Type="Int32" />
+          <Property Name="LivingWith" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="DescriptionInfo" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="ActiveInd" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CreatedDate" Type="DateTime" />
+          <Property Name="UpdatedDate" Type="DateTime" />
+          <NavigationProperty Name="AstrologicalInfo" Relationship="MatrimonyModel.fk_AstrologicalInfo_MatriID" FromRole="MatrimonyDetails" ToRole="AstrologicalInfo" />
+          <NavigationProperty Name="Caste" Relationship="MatrimonyModel.fk_MatrimonyDetails_CasteID" FromRole="MatrimonyDetails" ToRole="Caste" />
+          <NavigationProperty Name="City" Relationship="MatrimonyModel.fk_MatrimonyDetails_CityID" FromRole="MatrimonyDetails" ToRole="City" />
+          <NavigationProperty Name="Country" Relationship="MatrimonyModel.fk_MatrimonyDetails_MatriID" FromRole="MatrimonyDetails" ToRole="Country" />
+          <NavigationProperty Name="EduDetail" Relationship="MatrimonyModel.fk_EduDetails_MatriID" FromRole="MatrimonyDetails" ToRole="EduDetails" />
+          <NavigationProperty Name="Family" Relationship="MatrimonyModel.fk_Family_MatriID" FromRole="MatrimonyDetails" ToRole="Family" />
+          <NavigationProperty Name="Gothra" Relationship="MatrimonyModel.fk_MatrimonyDetails_GothraID" FromRole="MatrimonyDetails" ToRole="Gothra" />
+          <NavigationProperty Name="Habit" Relationship="MatrimonyModel.fk_Habit_MatriID" FromRole="MatrimonyDetails" ToRole="Habit" />
+          <NavigationProperty Name="Religion" Relationship="MatrimonyModel.fk_MatrimonyDetails_ReligionID" FromRole="MatrimonyDetails" ToRole="Religion" />
+          <NavigationProperty Name="StateDetail" Relationship="MatrimonyModel.fk_MatrimonyDetails_StateID" FromRole="MatrimonyDetails" ToRole="StateDetails" />
+          <NavigationProperty Name="SubCaste" Relationship="MatrimonyModel.fk_MatrimonyDetails_SubCasteID" FromRole="MatrimonyDetails" ToRole="SubCaste" />
+          <NavigationProperty Name="MotherTongue" Relationship="MatrimonyModel.fk_MatrimonyDetails_TongueID" FromRole="MatrimonyDetails" ToRole="MotherTongue" />
+          <NavigationProperty Name="PhysicalAttr" Relationship="MatrimonyModel.fk_PhysicalAttr_MatriID" FromRole="MatrimonyDetails" ToRole="PhysicalAttr" />
+        </EntityType>
+        <EntityType Name="MotherTongue">
+          <Key>
+            <PropertyRef Name="TongueID" />
+          </Key>
+          <Property Name="TongueID" Type="Int32" Nullable="false" />
+          <Property Name="TongueName" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="MatrimonyDetails" Relationship="MatrimonyModel.fk_MatrimonyDetails_TongueID" FromRole="MotherTongue" ToRole="MatrimonyDetails" />
+        </EntityType>
+        <EntityType Name="Occupation">
+          <Key>
+            <PropertyRef Name="OccupID" />
+          </Key>
+          <Property Name="OccupID" Type="Int32" Nullable="false" />
+          <Property Name="OccupName" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PhysicalAttr">
+          <Key>
+            <PropertyRef Name="MatrimonyID" />
+          </Key>
+          <Property Name="MatrimonyID" Type="Int32" Nullable="false" />
+          <Property Name="HeightAttr" Type="Int32" />
+          <Property Name="WeightAttr" Type="Int32" />
+          <Property Name="BodyType" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="Complexion" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="PhysicalStatus" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="MatrimonyDetail" Relationship="MatrimonyModel.fk_PhysicalAttr_MatriID" FromRole="PhysicalAttr" ToRole="MatrimonyDetails" />
+        </EntityType>
+        <EntityType Name="Raasi">
+          <Key>
+            <PropertyRef Name="RaasiID" />
+          </Key>
+          <Property Name="RaasiID" Type="Int32" Nullable="false" />
+          <Property Name="RaasiName" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="StarID" Type="Int32" />
+          <NavigationProperty Name="AstrologicalInfoes" Relationship="MatrimonyModel.fk_AstrologicalInfo_RaasiID" FromRole="Raasi" ToRole="AstrologicalInfo" />
+          <NavigationProperty Name="StarDetail" Relationship="MatrimonyModel.fk_Raasi_StarID" FromRole="Raasi" ToRole="StarDetails" />
+        </EntityType>
+        <EntityType Name="Religion">
+          <Key>
+            <PropertyRef Name="ReligionID" />
+          </Key>
+          <Property Name="ReligionID" Type="Int32" Nullable="false" />
+          <Property Name="ReligionName" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Castes" Relationship="MatrimonyModel.fk_Caste_ReligionID" FromRole="Religion" ToRole="Caste" />
+          <NavigationProperty Name="MatrimonyDetails" Relationship="MatrimonyModel.fk_MatrimonyDetails_ReligionID" FromRole="Religion" ToRole="MatrimonyDetails" />
+        </EntityType>
+        <EntityType Name="StarDetail">
+          <Key>
+            <PropertyRef Name="StarID" />
+          </Key>
+          <Property Name="StarID" Type="Int32" Nullable="false" />
+          <Property Name="StarName" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="AstrologicalInfoes" Relationship="MatrimonyModel.fk_AstrologicalInfo_StarID" FromRole="StarDetails" ToRole="AstrologicalInfo" />
+          <NavigationProperty Name="Raasis" Relationship="MatrimonyModel.fk_Raasi_StarID" FromRole="StarDetails" ToRole="Raasi" />
+        </EntityType>
+        <EntityType Name="StateDetail">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Name="StateID" Type="Int32" Nullable="false" />
+          <Property Name="StateName" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="CountryID" Type="Int32" />
+          <NavigationProperty Name="Cities" Relationship="MatrimonyModel.fk_City_StateID" FromRole="StateDetails" ToRole="City" />
+          <NavigationProperty Name="Country" Relationship="MatrimonyModel.fk_StateDetails_CountryID" FromRole="StateDetails" ToRole="Country" />
+          <NavigationProperty Name="MatrimonyDetails" Relationship="MatrimonyModel.fk_MatrimonyDetails_StateID" FromRole="StateDetails" ToRole="MatrimonyDetails" />
+        </EntityType>
+        <EntityType Name="SubCaste">
+          <Key>
+            <PropertyRef Name="SubCasteID" />
+          </Key>
+          <Property Name="SubCasteID" Type="Int32" Nullable="false" />
+          <Property Name="SubCasteName" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="CasteID" Type="Int32" />
+          <NavigationProperty Name="Caste" Relationship="MatrimonyModel.fk_SubCaste_CasteID" FromRole="SubCaste" ToRole="Caste" />
+          <NavigationProperty Name="Gothras" Relationship="MatrimonyModel.fk_Gothra_GothraID" FromRole="SubCaste" ToRole="Gothra" />
+          <NavigationProperty Name="MatrimonyDetails" Relationship="MatrimonyModel.fk_MatrimonyDetails_SubCasteID" FromRole="SubCaste" ToRole="MatrimonyDetails" />
+        </EntityType>
+        <Association Name="fk_AstrologicalInfo_MatriID">
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.MatrimonyDetail" Multiplicity="1" />
+          <End Role="AstrologicalInfo" Type="MatrimonyModel.AstrologicalInfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MatrimonyDetails">
+              <PropertyRef Name="MatrimonyID" />
+            </Principal>
+            <Dependent Role="AstrologicalInfo">
+              <PropertyRef Name="MatrimonyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_AstrologicalInfo_RaasiID">
+          <End Role="Raasi" Type="MatrimonyModel.Raasi" Multiplicity="0..1" />
+          <End Role="AstrologicalInfo" Type="MatrimonyModel.AstrologicalInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Raasi">
+              <PropertyRef Name="RaasiID" />
+            </Principal>
+            <Dependent Role="AstrologicalInfo">
+              <PropertyRef Name="RaasiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_AstrologicalInfo_StarID">
+          <End Role="StarDetails" Type="MatrimonyModel.StarDetail" Multiplicity="0..1" />
+          <End Role="AstrologicalInfo" Type="MatrimonyModel.AstrologicalInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StarDetails">
+              <PropertyRef Name="StarID" />
+            </Principal>
+            <Dependent Role="AstrologicalInfo">
+              <PropertyRef Name="StarID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Caste_ReligionID">
+          <End Role="Religion" Type="MatrimonyModel.Religion" Multiplicity="0..1" />
+          <End Role="Caste" Type="MatrimonyModel.Caste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Religion">
+              <PropertyRef Name="ReligionID" />
+            </Principal>
+            <Dependent Role="Caste">
+              <PropertyRef Name="ReligionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_CasteID">
+          <End Role="Caste" Type="MatrimonyModel.Caste" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.MatrimonyDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Caste">
+              <PropertyRef Name="CasteID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="CasteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_SubCaste_CasteID">
+          <End Role="Caste" Type="MatrimonyModel.Caste" Multiplicity="0..1" />
+          <End Role="SubCaste" Type="MatrimonyModel.SubCaste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Caste">
+              <PropertyRef Name="CasteID" />
+            </Principal>
+            <Dependent Role="SubCaste">
+              <PropertyRef Name="CasteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_City_StateID">
+          <End Role="StateDetails" Type="MatrimonyModel.StateDetail" Multiplicity="0..1" />
+          <End Role="City" Type="MatrimonyModel.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateDetails">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_CityID">
+          <End Role="City" Type="MatrimonyModel.City" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.MatrimonyDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_MatriID">
+          <End Role="Country" Type="MatrimonyModel.Country" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.MatrimonyDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_StateDetails_CountryID">
+          <End Role="Country" Type="MatrimonyModel.Country" Multiplicity="0..1" />
+          <End Role="StateDetails" Type="MatrimonyModel.StateDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryID" />
+            </Principal>
+            <Dependent Role="StateDetails">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_EduDetails_CurrID">
+          <End Role="Currency" Type="MatrimonyModel.Currency" Multiplicity="0..1" />
+          <End Role="EduDetails" Type="MatrimonyModel.EduDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="CurrID" />
+            </Principal>
+            <Dependent Role="EduDetails">
+              <PropertyRef Name="CurrID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_EduDetails_EduID">
+          <End Role="HighEducation" Type="MatrimonyModel.HighEducation" Multiplicity="0..1" />
+          <End Role="EduDetails" Type="MatrimonyModel.EduDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HighEducation">
+              <PropertyRef Name="EducationID" />
+            </Principal>
+            <Dependent Role="EduDetails">
+              <PropertyRef Name="EducationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_EduDetails_MatriID">
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.MatrimonyDetail" Multiplicity="1" />
+          <End Role="EduDetails" Type="MatrimonyModel.EduDetail" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MatrimonyDetails">
+              <PropertyRef Name="MatrimonyID" />
+            </Principal>
+            <Dependent Role="EduDetails">
+              <PropertyRef Name="MatrimonyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Family_MatriID">
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.MatrimonyDetail" Multiplicity="1" />
+          <End Role="Family" Type="MatrimonyModel.Family" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MatrimonyDetails">
+              <PropertyRef Name="MatrimonyID" />
+            </Principal>
+            <Dependent Role="Family">
+              <PropertyRef Name="MatrimonyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Gothra_GothraID">
+          <End Role="SubCaste" Type="MatrimonyModel.SubCaste" Multiplicity="0..1" />
+          <End Role="Gothra" Type="MatrimonyModel.Gothra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubCaste">
+              <PropertyRef Name="SubCasteID" />
+            </Principal>
+            <Dependent Role="Gothra">
+              <PropertyRef Name="SubCasteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_GothraID">
+          <End Role="Gothra" Type="MatrimonyModel.Gothra" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.MatrimonyDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gothra">
+              <PropertyRef Name="GothraID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="GothraID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Habit_MatriID">
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.MatrimonyDetail" Multiplicity="1" />
+          <End Role="Habit" Type="MatrimonyModel.Habit" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MatrimonyDetails">
+              <PropertyRef Name="MatrimonyID" />
+            </Principal>
+            <Dependent Role="Habit">
+              <PropertyRef Name="MatrimonyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_ReligionID">
+          <End Role="Religion" Type="MatrimonyModel.Religion" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.MatrimonyDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Religion">
+              <PropertyRef Name="ReligionID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="ReligionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_StateID">
+          <End Role="StateDetails" Type="MatrimonyModel.StateDetail" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.MatrimonyDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateDetails">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_SubCasteID">
+          <End Role="SubCaste" Type="MatrimonyModel.SubCaste" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.MatrimonyDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubCaste">
+              <PropertyRef Name="SubCasteID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="SubCasteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MatrimonyDetails_TongueID">
+          <End Role="MotherTongue" Type="MatrimonyModel.MotherTongue" Multiplicity="0..1" />
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.MatrimonyDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MotherTongue">
+              <PropertyRef Name="TongueID" />
+            </Principal>
+            <Dependent Role="MatrimonyDetails">
+              <PropertyRef Name="TongueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_PhysicalAttr_MatriID">
+          <End Role="MatrimonyDetails" Type="MatrimonyModel.MatrimonyDetail" Multiplicity="1" />
+          <End Role="PhysicalAttr" Type="MatrimonyModel.PhysicalAttr" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MatrimonyDetails">
+              <PropertyRef Name="MatrimonyID" />
+            </Principal>
+            <Dependent Role="PhysicalAttr">
+              <PropertyRef Name="MatrimonyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Raasi_StarID">
+          <End Role="StarDetails" Type="MatrimonyModel.StarDetail" Multiplicity="0..1" />
+          <End Role="Raasi" Type="MatrimonyModel.Raasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StarDetails">
+              <PropertyRef Name="StarID" />
+            </Principal>
+            <Dependent Role="Raasi">
+              <PropertyRef Name="StarID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MatrimonyModelStoreContainer" CdmEntityContainer="MatrimonyEntities">
+          <EntitySetMapping Name="AstrologicalInfoes"><EntityTypeMapping TypeName="MatrimonyModel.AstrologicalInfo"><MappingFragment StoreEntitySet="AstrologicalInfo">
+            <ScalarProperty Name="MatrimonyID" ColumnName="MatrimonyID" />
+            <ScalarProperty Name="Dosham" ColumnName="Dosham" />
+            <ScalarProperty Name="StarID" ColumnName="StarID" />
+            <ScalarProperty Name="RaasiID" ColumnName="RaasiID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Castes"><EntityTypeMapping TypeName="MatrimonyModel.Caste"><MappingFragment StoreEntitySet="Caste">
+            <ScalarProperty Name="CasteID" ColumnName="CasteID" />
+            <ScalarProperty Name="CasteName" ColumnName="CasteName" />
+            <ScalarProperty Name="ReligionID" ColumnName="ReligionID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Cities"><EntityTypeMapping TypeName="MatrimonyModel.City"><MappingFragment StoreEntitySet="City">
+            <ScalarProperty Name="CityID" ColumnName="CityID" />
+            <ScalarProperty Name="CityName" ColumnName="CityName" />
+            <ScalarProperty Name="StateID" ColumnName="StateID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Countries"><EntityTypeMapping TypeName="MatrimonyModel.Country"><MappingFragment StoreEntitySet="Country">
+            <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+            <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+            <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Currencies"><EntityTypeMapping TypeName="MatrimonyModel.Currency"><MappingFragment StoreEntitySet="Currency">
+            <ScalarProperty Name="CurrID" ColumnName="CurrID" />
+            <ScalarProperty Name="CurrName" ColumnName="CurrName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="EduDetails"><EntityTypeMapping TypeName="MatrimonyModel.EduDetail"><MappingFragment StoreEntitySet="EduDetails">
+            <ScalarProperty Name="MatrimonyID" ColumnName="MatrimonyID" />
+            <ScalarProperty Name="EducationID" ColumnName="EducationID" />
+            <ScalarProperty Name="OccupID" ColumnName="OccupID" />
+            <ScalarProperty Name="EmployedIn" ColumnName="EmployedIn" />
+            <ScalarProperty Name="IncomeType" ColumnName="IncomeType" />
+            <ScalarProperty Name="CurrID" ColumnName="CurrID" />
+            <ScalarProperty Name="Income" ColumnName="Income" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Families"><EntityTypeMapping TypeName="MatrimonyModel.Family"><MappingFragment StoreEntitySet="Family">
+            <ScalarProperty Name="MatrimonyID" ColumnName="MatrimonyID" />
+            <ScalarProperty Name="FamilyStatus" ColumnName="FamilyStatus" />
+            <ScalarProperty Name="FamilyType" ColumnName="FamilyType" />
+            <ScalarProperty Name="FamilyValues" ColumnName="FamilyValues" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Gothras"><EntityTypeMapping TypeName="MatrimonyModel.Gothra"><MappingFragment StoreEntitySet="Gothra">
+            <ScalarProperty Name="GothraID" ColumnName="GothraID" />
+            <ScalarProperty Name="GothraName" ColumnName="GothraName" />
+            <ScalarProperty Name="SubCasteID" ColumnName="SubCasteID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Habits"><EntityTypeMapping TypeName="MatrimonyModel.Habit"><MappingFragment StoreEntitySet="Habit">
+            <ScalarProperty Name="MatrimonyID" ColumnName="MatrimonyID" />
+            <ScalarProperty Name="Food" ColumnName="Food" />
+            <ScalarProperty Name="Smoking" ColumnName="Smoking" />
+            <ScalarProperty Name="Drinking" ColumnName="Drinking" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="HighEducations"><EntityTypeMapping TypeName="MatrimonyModel.HighEducation"><MappingFragment StoreEntitySet="HighEducation">
+            <ScalarProperty Name="EducationID" ColumnName="EducationID" />
+            <ScalarProperty Name="EducationName" ColumnName="EducationName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="MatrimonyDetails"><EntityTypeMapping TypeName="MatrimonyModel.MatrimonyDetail"><MappingFragment StoreEntitySet="MatrimonyDetails">
+            <ScalarProperty Name="MatrimonyID" ColumnName="MatrimonyID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="DOB" ColumnName="DOB" />
+            <ScalarProperty Name="Gender" ColumnName="Gender" />
+            <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+            <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+            <ScalarProperty Name="StateID" ColumnName="StateID" />
+            <ScalarProperty Name="CityID" ColumnName="CityID" />
+            <ScalarProperty Name="ReligionID" ColumnName="ReligionID" />
+            <ScalarProperty Name="CasteID" ColumnName="CasteID" />
+            <ScalarProperty Name="SubCasteID" ColumnName="SubCasteID" />
+            <ScalarProperty Name="GothraID" ColumnName="GothraID" />
+            <ScalarProperty Name="TongueID" ColumnName="TongueID" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+            <ScalarProperty Name="NoOfChild" ColumnName="NoOfChild" />
+            <ScalarProperty Name="LivingWith" ColumnName="LivingWith" />
+            <ScalarProperty Name="DescriptionInfo" ColumnName="DescriptionInfo" />
+            <ScalarProperty Name="ActiveInd" ColumnName="ActiveInd" />
+            <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+            <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="MotherTongues"><EntityTypeMapping TypeName="MatrimonyModel.MotherTongue"><MappingFragment StoreEntitySet="MotherTongue">
+            <ScalarProperty Name="TongueID" ColumnName="TongueID" />
+            <ScalarProperty Name="TongueName" ColumnName="TongueName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Occupations"><EntityTypeMapping TypeName="MatrimonyModel.Occupation"><MappingFragment StoreEntitySet="Occupation">
+            <ScalarProperty Name="OccupID" ColumnName="OccupID" />
+            <ScalarProperty Name="OccupName" ColumnName="OccupName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PhysicalAttrs"><EntityTypeMapping TypeName="MatrimonyModel.PhysicalAttr"><MappingFragment StoreEntitySet="PhysicalAttr">
+            <ScalarProperty Name="MatrimonyID" ColumnName="MatrimonyID" />
+            <ScalarProperty Name="HeightAttr" ColumnName="HeightAttr" />
+            <ScalarProperty Name="WeightAttr" ColumnName="WeightAttr" />
+            <ScalarProperty Name="BodyType" ColumnName="BodyType" />
+            <ScalarProperty Name="Complexion" ColumnName="Complexion" />
+            <ScalarProperty Name="PhysicalStatus" ColumnName="PhysicalStatus" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Raasis"><EntityTypeMapping TypeName="MatrimonyModel.Raasi"><MappingFragment StoreEntitySet="Raasi">
+            <ScalarProperty Name="RaasiID" ColumnName="RaasiID" />
+            <ScalarProperty Name="RaasiName" ColumnName="RaasiName" />
+            <ScalarProperty Name="StarID" ColumnName="StarID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Religions"><EntityTypeMapping TypeName="MatrimonyModel.Religion"><MappingFragment StoreEntitySet="Religion">
+            <ScalarProperty Name="ReligionID" ColumnName="ReligionID" />
+            <ScalarProperty Name="ReligionName" ColumnName="ReligionName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="StarDetails"><EntityTypeMapping TypeName="MatrimonyModel.StarDetail"><MappingFragment StoreEntitySet="StarDetails">
+            <ScalarProperty Name="StarID" ColumnName="StarID" />
+            <ScalarProperty Name="StarName" ColumnName="StarName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="StateDetails"><EntityTypeMapping TypeName="MatrimonyModel.StateDetail"><MappingFragment StoreEntitySet="StateDetails">
+            <ScalarProperty Name="StateID" ColumnName="StateID" />
+            <ScalarProperty Name="StateName" ColumnName="StateName" />
+            <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SubCastes"><EntityTypeMapping TypeName="MatrimonyModel.SubCaste"><MappingFragment StoreEntitySet="SubCaste">
+            <ScalarProperty Name="SubCasteID" ColumnName="SubCasteID" />
+            <ScalarProperty Name="SubCasteName" ColumnName="SubCasteName" />
+            <ScalarProperty Name="CasteID" ColumnName="CasteID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Matrimony">
+        <EntityTypeShape EntityType="MatrimonyModel.AstrologicalInfo" Width="1.5" PointX="9.75" PointY="13.625" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.Caste" Width="1.5" PointX="5.25" PointY="11.125" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.City" Width="1.5" PointX="5.25" PointY="18.125" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.Country" Width="1.5" PointX="0.75" PointY="9.5" Height="1.9802864583333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.Currency" Width="1.5" PointX="10.5" PointY="10.875" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.EduDetail" Width="1.5" PointX="12.75" PointY="13.375" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.Family" Width="1.5" PointX="9.75" PointY="17.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.Gothra" Width="1.5" PointX="5.25" PointY="14.125" Height="1.98028645833333" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.Habit" Width="1.5" PointX="9.75" PointY="20.5" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.HighEducation" Width="1.5" PointX="10.5" PointY="8.25" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.MatrimonyDetail" Width="1.5" PointX="7.5" PointY="11" Height="7.5570279947916692" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.MotherTongue" Width="1.5" PointX="5.25" PointY="21" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.Occupation" Width="1.5" PointX="0.75" PointY="0.75" Height="1.4033821614583388" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.PhysicalAttr" Width="1.5" PointX="9.75" PointY="23.125" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.Raasi" Width="1.5" PointX="7.5" PointY="7.875" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.Religion" Width="1.5" PointX="3" PointY="11.25" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.StarDetail" Width="1.5" PointX="5.25" PointY="7.875" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.StateDetail" Width="1.5" PointX="3" PointY="18" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrimonyModel.SubCaste" Width="1.5" PointX="3" PointY="14" Height="2.1725878906250014" IsExpanded="true" />
+        <AssociationConnector Association="MatrimonyModel.fk_AstrologicalInfo_MatriID" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="14.807444661458334" />
+          <ConnectorPoint PointX="9.75" PointY="14.807444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_AstrologicalInfo_RaasiID" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="8.03125" />
+          <ConnectorPoint PointX="10.09375" PointY="8.03125" />
+          <ConnectorPoint PointX="10.09375" PointY="13.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_AstrologicalInfo_StarID" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="8.7689925130208337" />
+          <ConnectorPoint PointX="7.25" PointY="8.7689925130208337" />
+          <ConnectorPoint PointX="7.25" PointY="10.625" />
+          <ConnectorPoint PointX="10.010416666666666" PointY="10.625" />
+          <ConnectorPoint PointX="10.177083333333334" PointY="10.625" />
+          <ConnectorPoint PointX="10.25" PointY="10.625" />
+          <ConnectorPoint PointX="10.25" PointY="13.25" />
+          <ConnectorPoint PointX="10.703127" PointY="13.25" />
+          <ConnectorPoint PointX="10.703127" PointY="13.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_Caste_ReligionID" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="12.143992513020834" />
+          <ConnectorPoint PointX="5.25" PointY="12.143992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_MatrimonyDetails_CasteID" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="12.2112939453125" />
+          <ConnectorPoint PointX="7.5" PointY="12.2112939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_SubCaste_CasteID" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.2511528461538459" PointY="13.297587890625" />
+          <ConnectorPoint PointX="4.875" PointY="13.673740736778846" />
+          <ConnectorPoint PointX="4.875" PointY="15.086293945312502" />
+          <ConnectorPoint PointX="4.5" PointY="15.086293945312502" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_City_StateID" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="19.115143229166666" />
+          <ConnectorPoint PointX="5.25" PointY="19.115143229166666" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_MatrimonyDetails_CityID" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="18.341013997395834" />
+          <ConnectorPoint PointX="7.5" PointY="18.341013997395834" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_MatrimonyDetails_MatriID" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.03125" />
+          <ConnectorPoint PointX="4.6365695128205138" PointY="11.03125" />
+          <ConnectorPoint PointX="4.80323617948718" PointY="11.03125" />
+          <ConnectorPoint PointX="7.5" PointY="11.03125" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_StateDetails_CountryID" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="11.480286458333335" />
+          <ConnectorPoint PointX="1.5" PointY="19.0862939453125" />
+          <ConnectorPoint PointX="3" PointY="19.0862939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_EduDetails_CurrID" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.65625" PointY="12.47068359375" />
+          <ConnectorPoint PointX="11.65625" PointY="16.184591471354167" />
+          <ConnectorPoint PointX="12.75" PointY="16.184591471354167" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_EduDetails_EduID" ManuallyRouted="false">
+          <ConnectorPoint PointX="12" PointY="9.047841796875" />
+          <ConnectorPoint PointX="13.5" PointY="9.047841796875" />
+          <ConnectorPoint PointX="13.5" PointY="13.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_EduDetails_MatriID" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="13.46875" />
+          <ConnectorPoint PointX="10.010416666666666" PointY="13.46875" />
+          <ConnectorPoint PointX="10.177083333333334" PointY="13.46875" />
+          <ConnectorPoint PointX="10.619793666666666" PointY="13.46875" />
+          <ConnectorPoint PointX="10.786460333333334" PointY="13.46875" />
+          <ConnectorPoint PointX="11.572916666666666" PointY="13.46875" />
+          <ConnectorPoint PointX="11.739583333333334" PointY="13.46875" />
+          <ConnectorPoint PointX="12.75" PointY="13.46875" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_Family_MatriID" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="18.153513997395834" />
+          <ConnectorPoint PointX="9.75" PointY="18.153513997395834" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_Gothra_GothraID" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="15.658290201822917" />
+          <ConnectorPoint PointX="5.25" PointY="15.658290201822917" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_MatrimonyDetails_GothraID" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="15.115143229166666" />
+          <ConnectorPoint PointX="7.5" PointY="15.115143229166666" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_Habit_MatriID" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.25" PointY="18.557027994791667" />
+          <ConnectorPoint PointX="8.25" PointY="21.490143229166666" />
+          <ConnectorPoint PointX="8.5729191666666669" PointY="21.490143229166666" />
+          <ConnectorPoint PointX="8.7395858333333347" PointY="21.490143229166666" />
+          <ConnectorPoint PointX="9.75" PointY="21.490143229166666" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_MatrimonyDetails_ReligionID" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="11.251152846153847" />
+          <ConnectorPoint PointX="4.875" PointY="10.876152846153847" />
+          <ConnectorPoint PointX="4.875" PointY="10.75" />
+          <ConnectorPoint PointX="7.2511528461538459" PointY="10.75" />
+          <ConnectorPoint PointX="7.5011528461538459" PointY="11" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_MatrimonyDetails_StateID" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="18.03125" />
+          <ConnectorPoint PointX="7.5" PointY="18.03125" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_MatrimonyDetails_SubCasteID" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="14.03125" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="14.03125" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="14.03125" />
+          <ConnectorPoint PointX="7.5" PointY="14.03125" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_MatrimonyDetails_TongueID" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="22.042913411458336" />
+          <ConnectorPoint PointX="7.8437475" PointY="22.042913411458336" />
+          <ConnectorPoint PointX="7.8437475" PointY="18.557027994791667" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_PhysicalAttr_MatriID" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.6562525" PointY="18.557027994791667" />
+          <ConnectorPoint PointX="8.6562525" PointY="24.307444661458334" />
+          <ConnectorPoint PointX="9.75" PointY="24.307444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="MatrimonyModel.fk_Raasi_StarID" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="8.2594962565104169" />
+          <ConnectorPoint PointX="7.5" PointY="8.2594962565104169" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
